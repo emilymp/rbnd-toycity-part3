@@ -14,6 +14,15 @@ class Product
     @@products
   end
 
+  def self.find_by_title(input_title)
+    product = @@products.find_index { |product| product.title == input_title }
+    if product
+      @@products[product]
+    end
+  end
+
+
+
   def in_stock?
     @stock > 0 ? true : false
   end
