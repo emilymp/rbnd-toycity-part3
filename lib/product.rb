@@ -1,10 +1,10 @@
 class Product
   attr_reader :title, :price, :stock
 
-	@@products = []
+  @@products = []
   
   def initialize(options={})
-  	@title = options[:title]
+    @title = options[:title]
     @price = options[:price]
     @stock = options[:stock]
     add_to_products
@@ -33,7 +33,7 @@ class Product
     in_stock? ? @stock -=+ 1 : false
   end
 
- 	private
+  private
 
   def add_to_products
     if @@products.any? { |product| product.title == @title }
@@ -44,5 +44,3 @@ class Product
   end
 
 end
-
-

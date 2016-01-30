@@ -1,14 +1,14 @@
 class Customer
-	attr_reader :name
+  attr_reader :name
 	
-	@@customers = []
+  @@customers = []
 	
-	def initialize(op={})
-		@name = op[:name]
-		add_customer
-	end
+  def initialize(op={})
+    @name = op[:name]
+    add_customer
+  end
 
-	def self.all
+  def self.all
     @@customers
   end
 
@@ -20,17 +20,16 @@ class Customer
   end
 
   def purchase(product)
-  	Transaction.new(self, product)
+    Transaction.new(self, product)
   end
 
-	private
+  private
 
-	def add_customer
-		if @@customers.any? { |customer| customer.name == @name }
-			raise DuplicateCustomerError, "'#{@name}' already exists."
-		else
-			@@customers << self
-		end
-	end
-
+  def add_customer
+    if @@customers.any? { |customer| customer.name == @name }
+      raise DuplicateCustomerError, "'#{@name}' already exists."
+    else
+      @@customers << self
+    end
+  end
 end

@@ -7,7 +7,7 @@ class Transaction
 	def initialize(customer, product)
 		@customer = customer
 		@product = product
-	 	add_transaction
+		add_transaction
 	end
 
 	def self.all
@@ -38,6 +38,4 @@ class Transaction
 		@@id_count += 1
 		@@id_count
 	end
-
-
 end
