@@ -1,13 +1,19 @@
 class Transaction
-	attr_reader :customer, :product, :id
+	attr_reader :customer, :product, :id, :discount
 
 	@@transactions = []
 	@@id_count = 0
 
-	def initialize(customer, product)
+	def initialize(customer, product, discount=0)
 		@customer = customer
 		@product = product
+		@discount = discount
 		add_transaction
+	end
+
+	def to_s
+		percent_discount = (@discount * 100).floor
+		"**ID** #{@id}, **CUSTOMER** #{@customer}, **PRODUCT** #{@product}, **DISCOUNT** #{percent_discount}%"
 	end
 
 	def self.all
@@ -30,7 +36,7 @@ class Transaction
 	end
 
 	def decrement_product_stock
-		product.decrement_stock
+		product.decrement_stock(@discount)
 	end
 
 

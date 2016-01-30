@@ -8,6 +8,14 @@ class Customer
     add_customer
   end
 
+  def purchase(product, discount=0)
+    Transaction.new(self, product, discount)
+  end
+
+  def to_s
+    "#{@name}"
+  end
+
   def self.all
     @@customers
   end
@@ -17,10 +25,6 @@ class Customer
     if customer
       @@customers[customer]
     end
-  end
-
-  def purchase(product)
-    Transaction.new(self, product)
   end
 
   private
