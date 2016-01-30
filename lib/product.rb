@@ -21,7 +21,9 @@ class Product
     end
   end
 
-
+  def self.in_stock
+    @@products.select { |product| product.in_stock? }
+  end
 
   def in_stock?
     @stock > 0 ? true : false
