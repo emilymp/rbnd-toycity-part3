@@ -29,6 +29,10 @@ class Product
     @stock > 0 ? true : false
   end
 
+ def decrement_stock
+    in_stock? ? @stock -=+ 1 : false
+  end
+  
  	private
 
   def add_to_products
@@ -38,6 +42,9 @@ class Product
       @@products << self
     end
   end
+
+ 
+
 end
 
 
