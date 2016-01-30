@@ -1,4 +1,6 @@
 class Product
+  attr_reader :title
+  
 	@@products = []
   
   def initialize(options={})

@@ -1,6 +1,8 @@
 class Transaction
-	def initialize(customer, toy)
+	attr_reader :customer, :product
+
+	def initialize(customer, product)
 		@customer = customer
-		@toy = toy
+		@product = product
 	end
 end
