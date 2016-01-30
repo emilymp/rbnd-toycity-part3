@@ -13,7 +13,7 @@ class Transaction
 
 	def to_s
 		percent_discount = (@discount * 100).floor
-		"**ID** #{@id}, **CUSTOMER** #{@customer}, **PRODUCT** #{@product}, **DISCOUNT** #{percent_discount}%"
+		"ID: #{@id}, Customer: #{@customer}, Product: #{@product}, Discount: #{percent_discount}%"
 	end
 
 	def self.all
