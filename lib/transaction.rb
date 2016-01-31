@@ -12,7 +12,7 @@ class Transaction
 	end
 
 	def to_s
-		"#{@id} #{@customer} #{@product} #{@discount}"
+		"**ID** #{@id}\n**Customer** #{@customer.name}\n**Product** #{@product.title}\n**Discount** #{(@discount * 100).floor}%"
 	end
 
 	def self.all

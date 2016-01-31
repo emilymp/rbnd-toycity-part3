@@ -13,7 +13,7 @@ class Customer
   end
 
   def to_s
-    "#{@name}"
+    "Name: #{@name}"
   end
 
   def self.all
@@ -21,9 +21,9 @@ class Customer
   end
 
   def self.find_by_name(input_name)
-    customer = @@customers.find_index { |customer| customer.name == input_name }
-    if customer
-      @@customers[customer]
+    customer_index = @@customers.find_index { |customer| customer.name == input_name }
+    if customer_index
+      @@customers[customer_index]
     end
   end
 

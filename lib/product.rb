@@ -14,22 +14,19 @@ class Product
   end
   
   def to_s
-    "#{@title}"
+    "Title: #{@title} Price: \$#{@price} Stock: #{@stock} Sales: #{@sales} Revenue: \$#{@revenue}"
   end
 
   def in_stock?
     @stock > 0 ? true : false
   end
 
-  def revenue
-    @sales * @price
-  end
-
   def decrement_stock(discount)
     if in_stock?
         @stock -= 1
         @sales += 1
-        @revenue +=  @price - @price * discount
+        @revenue +=  (@price - @price * discount).round(2)
+        return true
     end
   end
   
@@ -38,9 +35,9 @@ class Product
   end
 
   def self.find_by_title(input_title)
-    product = @@products.find_index { |product| product.title == input_title }
-    if product
-      @@products[product]
+    product_index = @@products.find_index { |product| product.title == input_title }
+    if product_index
+      @@products[product_index]
     end
   end
 

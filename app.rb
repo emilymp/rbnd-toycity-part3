@@ -67,3 +67,9 @@ puts Product.all.count # Should return 3
 
 # walter.purchase(firehouse)
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+
+# EXTRA 
+# Uncomment these to test additional features
+# puts walter.purchase(nanoblock, 0.15)
+# puts nanoblock.revenue
+# puts nanoblock.sales
